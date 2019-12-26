@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello McoloController!{% endblock %}
+
+{% block body %}
+    <section class="article">
+        {% for article in articles %}
+            <article>
+                <h4>{{article.title}}</h4>
+                <div class="metadata">la date    Dans la category: {{article.category.title}}</div>
+                <div class="content">
+                    <img src="{{article.image}}" alt="">
+                    <p>{{article.content}}</p>
+                    <a href="{{path('show',{'id': article.id})}}" class="btn btn-primary">Lire la suite</a>                    
+                </div>
+            </article>
+        {% endfor %}
+    </section>
+{% endblock %}
